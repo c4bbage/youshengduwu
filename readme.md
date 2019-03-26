@@ -21,3 +21,7 @@ MacBook-Pro:youshengduwu $ brew services start nginx
 
 - 微信内打开链接由于是IP地址端口在自动播放下一首时会拦截
 - Safari 自动播放失败，需要触屏播放
+
+## 截图
+![](./img/IMG_8154.PNG)
+![](./img/IMG_8155.PNG)
