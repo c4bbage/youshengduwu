@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<script type="text/javascript">
+    var a = document.location.href;
+    var s = a.indexOf("?");
+    var t = a.substring(s + 1);// t就是?后面的东西了             
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <style type="text/css">
+        img {
+
+            width: 100%;
+            height: 100%;
+
+        }
+
+        audio {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <title>武汉心语文化</title>
+</head>
+
+<body>
+
+    <img id='pic' src="22.png" />
+    <div align="center">
+
+        <h3>点击播放</h3>
+        <br />
+    </div>
+    <div align="center">
+        <!--  preload="auto" -->
+        <audio id="mp3" autoplay controls="controls" src="22.mp3" style="width:100%;height:50px;"></audio>
+    </div>
+    <!-- <div><img src="0.jpg"/></div> -->
+</body>
+<script>
+    var a1 = document.getElementById("pic");
+    a1.src = "mc_2/" + t + ".png";
+    var audio = document.getElementById("mp3");
+    audio.src = "mc_2/" + t + ".mp3";
+    audio.loop = false;
+    audio.addEventListener('ended', function () {
+        window.location.href = a.replace(t, parseInt(t) + 1);
+    }, false);
+    //--创建页面监听，等待微信端页面加载完毕 触发音频播放
+    document.addEventListener('DOMContentLoaded', function () {
+        function audioAutoPlay() {
+            var audio = document.getElementById('mp3');
+            audio.play();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                audio.play();
+            }, false);
+        }
+        audioAutoPlay();
+    });
+    //--创建触摸监听，当浏览器打开页面时，触摸屏幕触发事件，进行音频播放
+    document.addEventListener('touchstart', function () {
+        function audioAutoPlay() {
+            var audio = document.getElementById('mp3');
+            audio.play();
+        }
+        audioAutoPlay();
+    });
+</script>
+
+
+</html>
