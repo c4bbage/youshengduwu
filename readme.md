@@ -8,13 +8,16 @@
 MacBook-Pro:youshengduwu $ brew install nginx
 # 修改目录指向
 MacBook-Pro:youshengduwu $ brew services start nginx
+# 建议用Safari打开收藏到桌面
 
 ```
 ## 功能
 
 - 自动跳转下一故事
-- 自动播放
+- 微信下自动播放
+- 点击屏幕播放
 
 ## bug
 
-- 测试未做
+- 微信内打开链接由于是IP地址端口在自动播放下一首时会拦截
+- Safari 自动播放失败，需要触屏播放
